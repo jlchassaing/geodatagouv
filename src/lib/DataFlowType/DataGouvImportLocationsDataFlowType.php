@@ -4,7 +4,7 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouv\DataFlowType;
+namespace GeoDataGouv\DataFlowType;
 
 use CodeRhapsodie\DataflowBundle\DataflowType\AbstractDataflowType;
 use CodeRhapsodie\DataflowBundle\DataflowType\DataflowBuilder;
@@ -13,48 +13,36 @@ use CodeRhapsodie\DataflowBundle\DataflowType\Result;
 use CodeRhapsodie\EzDataflowBundle\Factory\ContentStructureFactory;
 use CodeRhapsodie\EzDataflowBundle\Factory\ContentStructureFactoryInterface;
 use CodeRhapsodie\EzDataflowBundle\Writer\ContentWriter;
-use eZGeoDataGouv\Config\ConfigManager;
-use eZGeoDataGouv\DataFlow\FileReader;
-use eZGeoDataGouv\DataFlow\GeocodingFileReader;
+use GeoDataGouv\Config\ConfigManager;
+use GeoDataGouv\DataFlow\FileReader;
+use GeoDataGouv\DataFlow\GeocodingFileReader;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class DataGouvImportLocationsDataFlowType extends AbstractDataflowType implements DataflowTypeInterface
 {
-    /** @var \CodeRhapsodie\EzDataflowBundle\Writer\ContentWriter  */
-    protected $contentWriter;
 
-    /** @var \CodeRhapsodie\EzDataflowBundle\Factory\ContentStructureFactory  */
-    protected $contentStructureFactory;
-
-    /** @var \eZGeoDataGouv\DataFlow\FileReader  */
+    /** @var \GeoDataGouv\DataFlow\FileReader  */
     protected $fileReader;
 
-    /** @var \eZGeoDataGouv\DataFlow\GeocodingFileReader  */
+    /** @var \GeoDataGouv\DataFlow\GeocodingFileReader  */
     protected $geocodingFileReader;
 
-    /** @var \eZGeoDataGouv\Config\ConfigManager  */
+    /** @var \GeoDataGouv\Config\ConfigManager  */
     protected $configManager;
 
     /**
      * DataGouvImportLocationsDataFlowType constructor.
      *
-     * @param \CodeRhapsodie\EzDataflowBundle\Writer\ContentWriter $contentWriter
-     * @param \CodeRhapsodie\EzDataflowBundle\Factory\ContentStructureFactory $contentStructureFactory
-     * @param \eZGeoDataGouv\DataFlow\FileReader $fileReader
-     * @param \eZGeoDataGouv\DataFlow\GeocodingFileReader $geocodingFileReader
-     * @param \eZGeoDataGouv\Config\ConfigManager $configManager
+     * @param \GeoDataGouv\DataFlow\FileReader $fileReader
+     * @param \GeoDataGouv\DataFlow\GeocodingFileReader $geocodingFileReader
+     * @param \GeoDataGouv\Config\ConfigManager $configManager
      */
     public function __construct(
-        ContentWriter $contentWriter,
-        ContentStructureFactory $contentStructureFactory,
         FileReader $fileReader,
         GeocodingFileReader $geocodingFileReader,
         ConfigManager $configManager)
     {
-
-        $this->contentWriter = $contentWriter;
-        $this->contentStructureFactory = $contentStructureFactory;
         $this->fileReader = $fileReader;
         $this->geocodingFileReader = $geocodingFileReader;
         $this->configManager = $configManager;
@@ -142,7 +130,7 @@ class DataGouvImportLocationsDataFlowType extends AbstractDataflowType implement
     /**
      * @param bool $do_geocoding
      *
-     * @return \eZGeoDataGouv\DataFlow\ReaderInterface
+     * @return \GeoDataGouv\DataFlow\ReaderInterface
      */
     protected function getReader($resourceConfig)
     {

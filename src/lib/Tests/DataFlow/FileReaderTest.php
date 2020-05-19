@@ -4,11 +4,11 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouv\Tests\DataFlow;
+namespace GeoDataGouv\Tests\DataFlow;
 
 
-use eZGeoDataGouv\DataFlow\FileReader;
-use eZGeoDataGouv\DataFlow\FileReaderException;
+use GeoDataGouv\DataFlow\FileReader;
+use GeoDataGouv\DataFlow\FileReaderException;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 

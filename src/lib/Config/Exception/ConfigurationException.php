@@ -4,7 +4,7 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouv\Config\Exception;
+namespace GeoDataGouv\Config\Exception;
 
 
 class ConfigurationException extends \Exception

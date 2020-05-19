@@ -4,27 +4,27 @@ services:
     autoconfigure: true
     public: false
 
-  eZGeoDataGouv\Config\ConfigManager:
+  GeoDataGouv\Config\ConfigManager:
 
-  eZGeoDataGouv\DataFlowType\DataGouvImportLocationsDataFlowType:
+  GeoDataGouv\DataFlowType\DataGouvImportLocationsDataFlowType:
     tags:
       - { name: coderhapsodie.dataflow.type }
 
-  eZGeoDataGouv\DataFlow\FileReader:
+  GeoDataGouv\DataFlow\FileReader:
 
-  eZGeoDataGouv\DataFlow\GeocodingFileReader:
+  GeoDataGouv\DataFlow\GeocodingFileReader:
 
-  eZGeoDataGouvBundle\Rest\DefaultController:
+  GeoDataGouvBundle\Rest\DefaultController:
     autoconfigure: false
     autowire: false
     public: true
     parent: 'ezpublish_rest.controller.base'
 
-  ez_geo_data_gouv.rest.controller:
-    alias: eZGeoDataGouvBundle\Rest\DefaultController
+  geo_data_gouv.rest.controller:
+    alias: GeoDataGouvBundle\Rest\DefaultController
     public: true
 
-  ez_geo_data_gouv.rest.value_object_visitor.LocationContent:
+  geo_data_gouv.rest.value_object_visitor.LocationContent:
     autoconfigure: false
     autowire: false
     public: true
@@ -33,9 +33,3 @@ services:
     arguments: ['@ezpublish.translation_helper']
     tags:
       - { name: ezpublish_rest.output.value_object_visitor, type: eZGeoDataGouvBundle\Rest\Values\LocationContent }
-
-
-  ez_feo_data_gouv.event.subscriber.view_builder:
-    class: eZGeoDataGouvBundle\EventSubscriber\ViewBuilderSubscriber
-    tags:
-      - {name: kernel.event_subscriber}

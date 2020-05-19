@@ -4,7 +4,7 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouv\DataFlow;
+namespace GeoDataGouv\DataFlow;
 
 
 use GuzzleHttp\Client;

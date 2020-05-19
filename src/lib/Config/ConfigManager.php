@@ -4,9 +4,9 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouv\Config;
+namespace GeoDataGouv\Config;
 
-use eZGeoDataGouv\Config\Exception\ConfigurationException;
+use GeoDataGouv\Config\Exception\ConfigurationException;
 
 class ConfigManager
 {

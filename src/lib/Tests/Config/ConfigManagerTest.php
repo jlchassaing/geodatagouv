@@ -4,10 +4,10 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouv\Tests\Config;
+namespace GeoDataGouv\Tests\Config;
 
-use eZGeoDataGouv\Config\ConfigManager;
-use eZGeoDataGouv\Config\Exception\ConfigurationException;
+use GeoDataGouv\Config\ConfigManager;
+use GeoDataGouv\Config\Exception\ConfigurationException;
 use PHPUnit\Framework\TestCase;
 
 class ConfigManagerTest extends TestCase

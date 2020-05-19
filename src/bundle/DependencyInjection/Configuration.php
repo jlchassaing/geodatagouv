@@ -4,7 +4,7 @@
  * @licence MIT
  */
 
-namespace eZGeoDataGouvBundle\DependencyInjection;
+namespace GeoDataGouvBundle\DependencyInjection;
 
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -41,7 +41,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('ez_geo_data_gouv');
+        $rootNode = $treeBuilder->root('geo_data_gouv');
 
         $rootNode
             ->children()
@@ -50,8 +50,8 @@ class Configuration implements ConfigurationInterface
                 ->arrayPrototype()
                 ->children()
                     ->booleanNode('do_geocoding')->defaultFalse()->end()
-                    ->scalarNode('content_type')->isRequired()
-                    ->info('content_type identifier to import content')->end()
+                    ->scalarNode('entity')->isRequired()
+                    ->info('entit class to import content')->end()
                     ->scalarNode('language')->defaultValue('eng-GB')->end()
                     ->scalarNode('id_key')->isRequired()
                         ->info('csv unique key fields that will be used to set content remote_id')
