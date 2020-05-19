@@ -18,7 +18,7 @@
   "require": {
     "php": "^7.0",
     "symfony/symfony": "^3.4",
-    "code-rhapsodie/dataflow-bundle": "^2.0"
+    "code-rhapsodie/dataflow-bundle": "^2.1"
   },
   "autoload": {
     "psr-4": {
